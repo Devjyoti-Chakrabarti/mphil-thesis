@@ -7,7 +7,6 @@ author: Devjyoti Chakrabarti
 # Load necessary libraries
 library(ggplot2)
 library(readr)
-library(lubridate)
 ```
 
 ## US Data

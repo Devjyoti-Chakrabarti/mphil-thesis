@@ -1,12 +1,11 @@
 ---
-title: MPhil Thesis Data 
-author: Devjyoti Chakrabarti  
+title: MPhil Thesis Data
+author: Devjyoti Chakrabarti 
 ---
 
 ```{r, message=FALSE, echo=FALSE, warning=FALSE}
 library(ggplot2) 
-library(readr) 
-library(lubridate)
+library(readr)
 ```
 
 ## India Data
