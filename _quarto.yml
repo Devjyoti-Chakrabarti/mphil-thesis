@@ -4,10 +4,7 @@ project:
 website:
   title: "mphil-thesis"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    false
 
 format:
   html:
