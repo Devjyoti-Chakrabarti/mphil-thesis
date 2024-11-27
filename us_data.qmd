@@ -3,212 +3,161 @@ title: MPhil Thesis Data
 author: Devjyoti Chakrabarti 
 ---
 
-```{python}
-#| echo: false
-import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.dates import DateFormatter
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Load necessary libraries
+library(ggplot2)
+library(readr)
+library(lubridate)
 ```
 
-## US Data 
+## US Data
 
-### Consumer Price Index  
-Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted  
+### Consumer Price Index
+
+Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\
 **Source:** [FRED](https://fred.stlouisfed.org/series/CPIAUCSL)
 
-```{python}
-#| echo: false
-# Plotting US Data 
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Read the data
+inflation_data <- read_csv("Data/FRED/CPIAUCSL.csv")
 
-inflation_data = pd.read_csv("Data/FRED/CPIAUCSL.csv")
+# Convert observation_date to Date format (dd/mm/yyyy)
+inflation_data$observation_date <- as.Date(inflation_data$observation_date, format="%d/%m/%Y")
 
-# Convert the observation_date column to a datetime object
-inflation_data['observation_date'] = pd.to_datetime(inflation_data['observation_date'])
-
-# Set the figure size and style
-plt.style.use('default')  # Use a nice style
-plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
-
-# Plot the data
-plt.plot(
-    inflation_data['observation_date'], 
-    inflation_data['CPIAUCSL'], 
-    color='darkblue', 
-    linewidth=2, 
-    label='CPI (1982-1984=100)'
-)
-
-# Add titles and labels
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('CPI Index', fontsize=12)
-
-# Format the X-axis with appropriate date ticks
-plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
-
-# Rotate the dates for better visibility
-plt.xticks(rotation=45)
-
-# Add a legend
-plt.legend(fontsize=12)
-
-# Add a grid for better readability
-plt.grid(which='major', linestyle='--', linewidth=0.5)
-
-# Show the plot
-plt.tight_layout()
-plt.show()
-
+# Create the plot with aesthetic improvements
+ggplot(inflation_data, aes(x = observation_date, y = CPIAUCSL)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Consumer Price Index (CPI) (1982-84 = 100)",
+    x = "Date",  # Label for the x-axis
+    y = "CPI Index"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
 ```
 
-### Real Gross Domestic Product 
-Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br>
-**Source:** [FRED](https://fred.stlouisfed.org/series/A191RL1Q225SBEA) 
+### Real Gross Domestic Product
 
-```{python}
-#| echo: false
-# Plotting US Data 
+Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/A191RL1Q225SBEA)
 
-RGDP_data = pd.read_csv("Data/FRED/A191RL1Q225SBEA.csv")
+```{r, message=FALSE, echo=FALSE}
+data <- read_csv("Data/FRED/A191RL1Q225SBEA.csv")
 
-# Convert the observation_date column to a datetime object
-RGDP_data['DATE'] = pd.to_datetime(RGDP_data['DATE'])
+# Convert observation_date to Date format (dd/mm/yyyy)
+data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
-# Set the figure size and style
-plt.style.use('default')  # Use a nice style
-plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
-
-# Plot the data
-plt.plot(
-    RGDP_data['DATE'], 
-    RGDP_data['A191RL1Q225SBEA'], 
-    color='darkblue', 
-    linewidth=2, 
-    label='Real GDP'
-)
-
-# Add titles and labels
-
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('Real GDP (% change)', fontsize=12)
-
-# Format the X-axis with appropriate date ticks
-plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
-
-# Rotate the dates for better visibility
-plt.xticks(rotation=45)
-
-# Add a legend
-plt.legend(fontsize=12)
-
-# Add a grid for better readability
-plt.grid(which='major', linestyle='--', linewidth=0.5)
-
-# Show the plot
-plt.tight_layout()
-plt.show()
-
+# Create the plot with aesthetic improvements
+ggplot(data, aes(x = DATE, y = A191RL1Q225SBEA)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Real Gross Domestic Product (% Change)",
+    x = "Date",  # Label for the x-axis
+    y = "Real GDP"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
 ```
 
 ### Federal Funds Rate
-Percent, Not Seasonally Adjusted, Monthly <br>
-**Source:** [FRED](https://fred.stlouisfed.org/series/FEDFUNDS) 
 
-```{python}
-#| echo: false
-# Plotting US Data 
+Percent, Not Seasonally Adjusted, Monthly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/FEDFUNDS)
 
-data = pd.read_csv("Data/FRED/FEDFUNDS.csv")
+```{r, message=FALSE, echo=FALSE}
+data <- read_csv("Data/FRED/FEDFUNDS.csv")
 
-# Convert the observation_date column to a datetime object
-data['DATE'] = pd.to_datetime(data['DATE'])
+# Convert observation_date to Date format (dd/mm/yyyy)
+data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
-# Set the figure size and style
-plt.style.use('default')  # Use a nice style
-plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
-
-# Plot the data
-plt.plot(
-    data['DATE'], 
-    data['FEDFUNDS'], 
-    color='darkblue', 
-    linewidth=2, 
-    label='Federal Funds Rate'
-)
-
-# Add titles and labels
-
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('Federal Funds Rate', fontsize=12)
-
-# Format the X-axis with appropriate date ticks
-plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
-
-# Rotate the dates for better visibility
-plt.xticks(rotation=45)
-
-# Add a legend
-plt.legend(fontsize=12)
-
-# Add a grid for better readability
-plt.grid(which='major', linestyle='--', linewidth=0.5)
-
-# Show the plot
-plt.tight_layout()
-plt.show()
-
+# Create the plot with aesthetic improvements
+ggplot(data, aes(x = DATE, y = FEDFUNDS)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Federal Funds Rate",
+    x = "Date",  # Label for the x-axis
+    y = "Federal Funds Rate"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
 ```
 
-### Industrial Production Index 
-Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br>
-**Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO) 
+### Industrial Production Index
 
-```{python}
-#| echo: false
-# Plotting US Data 
+Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO)
 
-data = pd.read_csv("Data/FRED/INDPRO.csv")
+```{r, message=FALSE, echo=FALSE}
+data <- read_csv("Data/FRED/INDPRO.csv")
 
-# Convert the observation_date column to a datetime object
-data['DATE'] = pd.to_datetime(data['DATE'])
+# Convert observation_date to Date format (dd/mm/yyyy)
+data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
-# Set the figure size and style
-plt.style.use('default')  # Use a nice style
-plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
-
-# Plot the data
-plt.plot(
-    data['DATE'], 
-    data['INDPRO'], 
-    color='darkblue', 
-    linewidth=2, 
-    label='Industrial Production Index'
-)
-
-# Add titles and labels
-
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('Industrial Production Index', fontsize=12)
-
-# Format the X-axis with appropriate date ticks
-plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
-
-# Rotate the dates for better visibility
-plt.xticks(rotation=45)
-
-# Add a legend
-plt.legend(fontsize=12)
-
-# Add a grid for better readability
-plt.grid(which='major', linestyle='--', linewidth=0.5)
-
-# Show the plot
-plt.tight_layout()
-plt.show()
-```
-
-
-
-```{python}
-import sys
-print(sys.executable)
+# Create the plot with aesthetic improvements
+ggplot(data, aes(x = DATE, y = INDPRO)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Industrial Production Index",
+    x = "Date",  # Label for the x-axis
+    y = "Industrial Production Index"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
 ```
