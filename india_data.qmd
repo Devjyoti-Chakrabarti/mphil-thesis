@@ -1,0 +1,213 @@
+---
+title: MPhil Thesis Data
+author: Devjyoti Chakrabarti 
+format:
+  html:
+    code-fold: true
+    panel: true
+jupyter: python3
+---
+
+```{python}
+#| echo: false
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
+```
+
+## India Data 
+
+### Consumer Price Index  
+Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted  
+**Source:** [FRED](https://fred.stlouisfed.org/series/CPIAUCSL)
+
+```{python}
+#| echo: false
+# Plotting US Data 
+
+inflation_data = pd.read_csv("Data/FRED/CPIAUCSL.csv")
+
+# Convert the observation_date column to a datetime object
+inflation_data['observation_date'] = pd.to_datetime(inflation_data['observation_date'])
+
+# Set the figure size and style
+plt.style.use('default')  # Use a nice style
+plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
+
+# Plot the data
+plt.plot(
+    inflation_data['observation_date'], 
+    inflation_data['CPIAUCSL'], 
+    color='darkblue', 
+    linewidth=2, 
+    label='CPI (1982-1984=100)'
+)
+
+# Add titles and labels
+plt.xlabel('Date', fontsize=12)
+plt.ylabel('CPI Index', fontsize=12)
+
+# Format the X-axis with appropriate date ticks
+plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+
+# Rotate the dates for better visibility
+plt.xticks(rotation=45)
+
+# Add a legend
+plt.legend(fontsize=12)
+
+# Add a grid for better readability
+plt.grid(which='major', linestyle='--', linewidth=0.5)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+```
+
+### Real Gross Domestic Product 
+Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br>
+**Source:** [FRED](https://fred.stlouisfed.org/series/A191RL1Q225SBEA) 
+
+```{python}
+#| echo: false
+# Plotting US Data 
+
+RGDP_data = pd.read_csv("Data/FRED/A191RL1Q225SBEA.csv")
+
+# Convert the observation_date column to a datetime object
+RGDP_data['DATE'] = pd.to_datetime(RGDP_data['DATE'])
+
+# Set the figure size and style
+plt.style.use('default')  # Use a nice style
+plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
+
+# Plot the data
+plt.plot(
+    RGDP_data['DATE'], 
+    RGDP_data['A191RL1Q225SBEA'], 
+    color='darkblue', 
+    linewidth=2, 
+    label='Real GDP'
+)
+
+# Add titles and labels
+
+plt.xlabel('Date', fontsize=12)
+plt.ylabel('Real GDP (% change)', fontsize=12)
+
+# Format the X-axis with appropriate date ticks
+plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+
+# Rotate the dates for better visibility
+plt.xticks(rotation=45)
+
+# Add a legend
+plt.legend(fontsize=12)
+
+# Add a grid for better readability
+plt.grid(which='major', linestyle='--', linewidth=0.5)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+```
+
+### Federal Funds Rate
+Percent, Not Seasonally Adjusted, Monthly <br>
+**Source:** [FRED](https://fred.stlouisfed.org/series/FEDFUNDS) 
+
+```{python}
+#| echo: false
+# Plotting US Data 
+
+data = pd.read_csv("Data/FRED/FEDFUNDS.csv")
+
+# Convert the observation_date column to a datetime object
+data['DATE'] = pd.to_datetime(data['DATE'])
+
+# Set the figure size and style
+plt.style.use('default')  # Use a nice style
+plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
+
+# Plot the data
+plt.plot(
+    data['DATE'], 
+    data['FEDFUNDS'], 
+    color='darkblue', 
+    linewidth=2, 
+    label='Federal Funds Rate'
+)
+
+# Add titles and labels
+
+plt.xlabel('Date', fontsize=12)
+plt.ylabel('Federal Funds Rate', fontsize=12)
+
+# Format the X-axis with appropriate date ticks
+plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+
+# Rotate the dates for better visibility
+plt.xticks(rotation=45)
+
+# Add a legend
+plt.legend(fontsize=12)
+
+# Add a grid for better readability
+plt.grid(which='major', linestyle='--', linewidth=0.5)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+```
+
+### Industrial Production Index 
+Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br>
+**Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO) 
+
+```{python}
+#| echo: false
+# Plotting US Data 
+
+data = pd.read_csv("Data/FRED/INDPRO.csv")
+
+# Convert the observation_date column to a datetime object
+data['DATE'] = pd.to_datetime(data['DATE'])
+
+# Set the figure size and style
+plt.style.use('default')  # Use a nice style
+plt.figure(figsize=(6.5, 4), facecolor='white')        # Set the figure size
+
+# Plot the data
+plt.plot(
+    data['DATE'], 
+    data['INDPRO'], 
+    color='darkblue', 
+    linewidth=2, 
+    label='Industrial Production Index'
+)
+
+# Add titles and labels
+
+plt.xlabel('Date', fontsize=12)
+plt.ylabel('Industrial Production Index', fontsize=12)
+
+# Format the X-axis with appropriate date ticks
+plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+
+# Rotate the dates for better visibility
+plt.xticks(rotation=45)
+
+# Add a legend
+plt.legend(fontsize=12)
+
+# Add a grid for better readability
+plt.grid(which='major', linestyle='--', linewidth=0.5)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+```
