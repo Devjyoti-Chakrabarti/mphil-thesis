@@ -206,7 +206,6 @@ plt.grid(which='major', linestyle='--', linewidth=0.5)
 # Show the plot
 plt.tight_layout()
 plt.show()
-
 ```
 
 
