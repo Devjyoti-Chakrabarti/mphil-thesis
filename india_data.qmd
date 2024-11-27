@@ -1,11 +1,6 @@
 ---
 title: MPhil Thesis Data
 author: Devjyoti Chakrabarti 
-format:
-  html:
-    code-fold: true
-    panel: true
-jupyter: python3
 ---
 
 ```{python}
