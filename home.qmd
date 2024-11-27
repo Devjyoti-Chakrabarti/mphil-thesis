@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 ```
 
+## US Data 
+
 ### Consumer Price Index  
 Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted  
 **Source:** [FRED](https://fred.stlouisfed.org/series/CPIAUCSL)
