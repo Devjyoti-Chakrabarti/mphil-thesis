@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 ```
 
-## US Data 
+## India Data 
 
 ### Consumer Price Index  
 Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted  
@@ -207,4 +207,11 @@ plt.grid(which='major', linestyle='--', linewidth=0.5)
 plt.tight_layout()
 plt.show()
 
+```
+
+
+
+```{python}
+import sys
+print(sys.executable)
 ```
