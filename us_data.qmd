@@ -1,8 +1,6 @@
 ---
 title: MPhil Thesis Data
 author: Devjyoti Chakrabarti 
-format: html 
-jupyter: python3
 ---
 
 ```{python}
@@ -12,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 ```
 
-## India Data 
+## US Data 
 
 ### Consumer Price Index  
 Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted  

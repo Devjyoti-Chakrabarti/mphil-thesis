@@ -18,14 +18,14 @@
     "href": "us_data.html",
     "title": "MPhil Thesis Data",
     "section": "",
-    "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED"
+    "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\nimport sys\nprint(sys.executable)\n\nC:\\Users\\devjy\\AppData\\Local\\Programs\\Python\\Python310\\pythonw.exe"
   },
   {
     "objectID": "us_data.html#us-data",
     "href": "us_data.html#us-data",
     "title": "MPhil Thesis Data",
     "section": "",
-    "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED"
+    "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\nimport sys\nprint(sys.executable)\n\nC:\\Users\\devjy\\AppData\\Local\\Programs\\Python\\Python310\\pythonw.exe"
   },
   {
     "objectID": "india_data.html",
@@ -40,5 +40,12 @@
     "title": "MPhil Thesis Data",
     "section": "",
     "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED"
+  },
+  {
+    "objectID": "us_data.html#india-data",
+    "href": "us_data.html#india-data",
+    "title": "MPhil Thesis Data",
+    "section": "",
+    "text": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\nSource: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nPercent, Not Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\n\n\nIndustrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly  Source: FRED\n\n\n\n\n\n\n\n\n\n\nimport sys\nprint(sys.executable)\n\nC:\\Users\\devjy\\AppData\\Local\\Programs\\Python\\Python310\\pythonw.exe"
   }
 ]
