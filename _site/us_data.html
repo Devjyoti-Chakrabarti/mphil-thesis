@@ -59,7 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -75,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-274c3d255ff4b40ad85bc0e900837b3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -106,35 +105,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./us_data.html" aria-current="page"> 
-<span class="menu-text">US Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./india_data.html"> 
-<span class="menu-text">India Data</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -186,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="consumer-price-index">Consumer Price Index</h3>
 <p>Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted<br>
 <strong>Source:</strong> <a href="https://fred.stlouisfed.org/series/CPIAUCSL">FRED</a></p>
-<div id="5bad16f2" class="cell" data-execution_count="2">
+<div id="71e68c5a" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -199,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="real-gross-domestic-product" class="level3">
 <h3 class="anchored" data-anchor-id="real-gross-domestic-product">Real Gross Domestic Product</h3>
 <p>Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br> <strong>Source:</strong> <a href="https://fred.stlouisfed.org/series/A191RL1Q225SBEA">FRED</a></p>
-<div id="a20d6bcc" class="cell" data-execution_count="3">
+<div id="5e1a1c95" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -212,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="federal-funds-rate" class="level3">
 <h3 class="anchored" data-anchor-id="federal-funds-rate">Federal Funds Rate</h3>
 <p>Percent, Not Seasonally Adjusted, Monthly <br> <strong>Source:</strong> <a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED</a></p>
-<div id="e589d943" class="cell" data-execution_count="4">
+<div id="6af9441f" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -225,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="industrial-production-index" class="level3">
 <h3 class="anchored" data-anchor-id="industrial-production-index">Industrial Production Index</h3>
 <p>Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br> <strong>Source:</strong> <a href="https://fred.stlouisfed.org/series/INDPRO">FRED</a></p>
-<div id="6e55c6e3" class="cell" data-execution_count="5">
+<div id="f0ccaf9b" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -234,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="83d475b2" class="cell" data-execution_count="6">
+<div id="c1b8f6eb" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
