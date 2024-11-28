@@ -7,8 +7,6 @@ author: Devjyoti Chakrabarti
 library(ggplot2)
 library(scales)
 library(readr)
-library(dplyr)
-library(tidyr)
 ```
 
 ## India Data
