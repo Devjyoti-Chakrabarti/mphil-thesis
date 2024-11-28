@@ -96,7 +96,7 @@ Percent <br> **Source:** [RBI](https://www.rbi.org.in/scripts/PublicationsView.a
 
 ```{r, message=FALSE, echo=FALSE}
 # Load the data
-data <- read_excel("Data/India Data/Money Rates.xlsx", sheet = "Sheet1")
+data <- read_excel("Data/India Data/Money_Rates.xlsx")
 
 # Ensure the DATE column is properly formatted
 data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
