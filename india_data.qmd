@@ -13,7 +13,7 @@ library(readr)
 
 ### Consumer Price Index
 
-Consumer Price Index, General Index, All India. Unclear if it is seasonally adjusted.\
+Consumer Price Index, General Index, All India, Monthly. Unclear if it is seasonally adjusted.\
 **Source:** [MOSPI](https://cpi.mospi.gov.in/Default1.aspx)
 
 ```{r, message=FALSE, echo=FALSE, warning=FALSE}
@@ -141,7 +141,7 @@ data <- read_csv("Data/India Data/IIP.csv")
 data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
 # Reshape the data from wide to long format for ggplot
-data_long <- data %>%
+data_long <- data |>
   pivot_longer(
     cols = c(Primary_goods, Capital_goods, Intermediate_goods, 
              Infrastructure_or_construction_goods, Consumer_durables, Consumer_non_durables),
