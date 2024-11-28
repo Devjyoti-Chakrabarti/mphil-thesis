@@ -4,34 +4,38 @@ author: Devjyoti Chakrabarti
 ---
 
 ```{r, message=FALSE, echo=FALSE, warning=FALSE}
-library(ggplot2) 
+library(ggplot2)
+library(scales)
 library(readr)
+library(readxl)
+library(dplyr)
+library(tidyr)
 ```
 
 ## India Data
 
 ### Consumer Price Index
 
-Consumer Price Index for All Urban Consumers: All Items in U.S. City Average, Index 1982-1984=100, Monthly, Seasonally Adjusted\
-**Source:** [FRED](https://fred.stlouisfed.org/series/CPIAUCSL)
+Consumer Price Index, General Index, All India. Unclear if it is seasonally adjusted.\
+**Source:** [MOSPI](https://cpi.mospi.gov.in/Default1.aspx)
 
 ```{r, message=FALSE, echo=FALSE, warning=FALSE}
 # Read the data
-inflation_data <- read_csv("Data/FRED/CPIAUCSL.csv")
+data <- read_csv("Data/India Data/CPI_Index.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
-inflation_data$observation_date <- as.Date(inflation_data$observation_date, format="%d/%m/%Y")
+data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
 # Create the plot with aesthetic improvements
-ggplot(inflation_data, aes(x = observation_date, y = CPIAUCSL)) +
+ggplot(data, aes(x = DATE, y = Combined)) +
   geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
   labs(
-    title = "Consumer Price Index (CPI) (1982-84 = 100)",
+    title = "CPI Index",
     x = "Date",  # Label for the x-axis
-    y = "CPI Index"  # Label for the y-axis
+    y = "CPI"  # Label for the y-axis
   ) +
   scale_x_date(
-    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 6 months
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
   ) +
   theme_minimal() +  # Minimal theme for a clean look
@@ -51,25 +55,24 @@ ggplot(inflation_data, aes(x = observation_date, y = CPIAUCSL)) +
 
 ### Real Gross Domestic Product
 
-Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/A191RL1Q225SBEA)
+Millions of Domestic Currency, Not Seasonally Adjusted, Quarterly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/NGDPRNSAXDCINQ)
 
 ```{r, message=FALSE, echo=FALSE}
-
-data <- read_csv("Data/FRED/A191RL1Q225SBEA.csv")
+data <- read_csv("Data/India Data/NGDPRNSAXDCINQ.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
 data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
 # Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = A191RL1Q225SBEA)) +
+ggplot(data, aes(x = DATE, y = NGDPRNSAXDCINQ)) +
   geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
   labs(
-    title = "Real Gross Domestic Product (% Change)",
+    title = "Real Gross Domestic Product (Millions Rupee)",
     x = "Date",  # Label for the x-axis
     y = "Real GDP"  # Label for the y-axis
   ) +
   scale_x_date(
-    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 6 months
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
   ) +
   theme_minimal() +  # Minimal theme for a clean look
@@ -87,63 +90,79 @@ ggplot(data, aes(x = DATE, y = A191RL1Q225SBEA)) +
   )
 ```
 
-### Federal Funds Rate
+### Repo Rate and Reverse Repo Rate
 
-Percent, Not Seasonally Adjusted, Monthly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/FEDFUNDS)
+Percent <br> **Source:** [RBI](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=22517)
 
 ```{r, message=FALSE, echo=FALSE}
-data <- read_csv("Data/FRED/FEDFUNDS.csv")
+# Load the data
+data <- read_excel("Data/India Data/Money Rates.xlsx", sheet = "Sheet1")
 
-# Convert observation_date to Date format (dd/mm/yyyy)
+# Ensure the DATE column is properly formatted
 data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = FEDFUNDS)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Create the plot
+ggplot(data) +
+  geom_line(aes(x = DATE, y = Repo_Rate, color = "Repo Rate"), size = 1.2) +
+  geom_line(aes(x = DATE, y = Reverse_Repo_Rate, color = "Reverse Repo Rate"), size = 1.2) +
   labs(
-    title = "Federal Funds Rate",
-    x = "Date",  # Label for the x-axis
-    y = "Federal Funds Rate"  # Label for the y-axis
+    title = "Repo and Reverse Repo Rates Over Time",
+    x = "Date",
+    y = "Rate (%)",
+    color = "Legend"
   ) +
   scale_x_date(
-    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
-    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+    breaks = seq(min(data$DATE), max(data$DATE), by = "1 year"),
+    labels = date_format("%b %Y")
   ) +
-  theme_minimal() +  # Minimal theme for a clean look
+  theme_minimal() +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
-    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
-    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
-    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
-    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
-    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
-    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
-    panel.grid.minor = element_blank(),  # Remove minor grid lines
-    panel.background = element_rect(fill = "white", color = "white")  # White background
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),
+    axis.text.y = element_text(size = 12, color = "black"),
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12, face = "bold"),
+    legend.text = element_text(size = 10),
+    axis.line = element_line(color = "black", size = 0.5),
+    panel.grid.major = element_line(color = "grey90", size = 0.5),
+    panel.grid.minor = element_blank(),
+    panel.background = element_rect(fill = "white", color = "white")
   )
 ```
 
 ### Industrial Production Index
 
-Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO)
+Monthly indices of industrial production as per use-based classification <br> **Source:** [MOSPI](https://mospi.gov.in/iip)
 
 ```{r, message=FALSE, echo=FALSE}
-data <- read_csv("Data/FRED/INDPRO.csv")
+# Load the data
+data <- read_excel("Data/India Data/IIP.xlsx", sheet = "Sheet1")
 
-# Convert observation_date to Date format (dd/mm/yyyy)
-data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
+# Convert 'DATE' column to Date format (if not already in the correct format)
+data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = INDPRO)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Reshape the data from wide to long format for ggplot
+data_long <- data %>%
+  pivot_longer(
+    cols = c(Primary_goods, Capital_goods, Intermediate_goods, 
+             Infrastructure_or_construction_goods, Consumer_durables, Consumer_non_durables),
+    names_to = "Category",
+    values_to = "Value"
+  )
+
+# Create the plot
+ggplot(data_long, aes(x = DATE, y = Value, color = Category)) +
+  geom_line(size = 1.2) +  # Plot all lines with different colors
   labs(
-    title = "Industrial Production Index",
+    title = "Industrial Production Index by Category",
     x = "Date",  # Label for the x-axis
-    y = "Industrial Production Index"  # Label for the y-axis
+    y = "Industrial Production Index",  # Label for the y-axis
+    color = "Category"  # Legend title
   ) +
   scale_x_date(
-    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "10 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "1 year"),  # Show labels every year
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
   ) +
   theme_minimal() +  # Minimal theme for a clean look
@@ -153,7 +172,9 @@ ggplot(data, aes(x = DATE, y = INDPRO)) +
     axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
     axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
     plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
+    legend.position = "bottom",  # Place the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
     axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
     panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
     panel.grid.minor = element_blank(),  # Remove minor grid lines
