@@ -7,7 +7,6 @@ author: Devjyoti Chakrabarti
 library(ggplot2)
 library(scales)
 library(readr)
-library(readxl)
 library(dplyr)
 library(tidyr)
 ```
@@ -96,7 +95,7 @@ Percent <br> **Source:** [RBI](https://www.rbi.org.in/scripts/PublicationsView.a
 
 ```{r, message=FALSE, echo=FALSE}
 # Load the data
-data <- read_excel("Data/India Data/Money_Rates.xlsx")
+data <- read_csv("Data/India Data/Money_Rates.csv")
 
 # Ensure the DATE column is properly formatted
 data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
@@ -138,7 +137,7 @@ Monthly indices of industrial production as per use-based classification <br> **
 
 ```{r, message=FALSE, echo=FALSE}
 # Load the data
-data <- read_excel("Data/India Data/IIP.xlsx", sheet = "Sheet1")
+data <- read_csv("Data/India Data/IIP.csv")
 
 # Convert 'DATE' column to Date format (if not already in the correct format)
 data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
