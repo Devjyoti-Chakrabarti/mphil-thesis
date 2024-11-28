@@ -140,14 +140,26 @@ data <- read_csv("Data/India Data/IIP.csv")
 # Convert 'DATE' column to Date format (if not already in the correct format)
 data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
-# Reshape the data from wide to long format for ggplot
-data_long <- data |>
-  pivot_longer(
-    cols = c(Primary_goods, Capital_goods, Intermediate_goods, 
-             Infrastructure_or_construction_goods, Consumer_durables, Consumer_non_durables),
-    names_to = "Category",
-    values_to = "Value"
+# Create long-format data using base R
+data_long <- data.frame(
+  DATE = rep(data$DATE, 6),  # Repeat the DATE column for each category
+  Category = c(
+    rep("Primary_goods", nrow(data)),
+    rep("Capital_goods", nrow(data)),
+    rep("Intermediate_goods", nrow(data)),
+    rep("Infrastructure_or_construction_goods", nrow(data)),
+    rep("Consumer_durables", nrow(data)),
+    rep("Consumer_non_durables", nrow(data))
+  ),
+  Value = c(
+    data$Primary_goods,
+    data$Capital_goods,
+    data$Intermediate_goods,
+    data$Infrastructure_or_construction_goods,
+    data$Consumer_durables,
+    data$Consumer_non_durables
   )
+)
 
 # Create the plot
 ggplot(data_long, aes(x = DATE, y = Value, color = Category)) +
