@@ -160,3 +160,45 @@ ggplot(data, aes(x = DATE, y = INDPRO)) +
     panel.background = element_rect(fill = "white", color = "white")  # White background
   )
 ```
+
+## Global Data 
+
+### Global Price Index of All Commodities
+
+Index 2016 = 100, Not Seasonally Adjusted, Quarterly. \<br\>
+
+[FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXQ)
+
+```{r}
+# Read the data
+inflation_data <- read_csv("Data/FRED/PALLFNFINDEXQ.csv")
+
+# Convert observation_date to Date format (dd/mm/yyyy)
+inflation_data$DATE <- as.Date(inflation_data$DATE, format="%d/%m/%Y")
+
+# Create the plot with aesthetic improvements
+ggplot(inflation_data, aes(x = DATE, y = PALLFNFINDEXQ)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Global Price Index for all Commodities (2016 = 100)",
+    x = "Date",  # Label for the x-axis
+    y = "Price Index"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$DATE), max(inflation_data$DATE), by = "2 year"),  # Show labels every 6 months
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
+```
