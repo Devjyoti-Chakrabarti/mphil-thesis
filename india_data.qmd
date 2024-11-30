@@ -21,19 +21,24 @@ Consumer Price Index, General Index, All India, Monthly. Unclear if it is season
 data <- read_csv("Data/India Data/CPI_Index.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
-data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
+data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = Combined)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Create the plot with both 'Combined' and 'CPI (SA)' columns, adding a legend
+ggplot(data) +
+  geom_line(aes(x = DATE, y = Combined, color = "CPI (Original)"), size = 1.2) +  # Original CPI line
+  geom_line(aes(x = DATE, y = `CPI (SA)`, color = "CPI (Seasonally Adjusted)"), size = 1.2, linetype = "solid") +  # Seasonally adjusted CPI line
   labs(
     title = "CPI Index",
     x = "Date",  # Label for the x-axis
-    y = "CPI"  # Label for the y-axis
+    y = "CPI",  # Label for the y-axis
+    color = "Series"  # Legend title
   ) +
   scale_x_date(
-    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 2 years
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the legend
+    values = c("CPI (Original)" = "#1f77b4", "CPI (Seasonally Adjusted)" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(
@@ -42,7 +47,9 @@ ggplot(data, aes(x = DATE, y = Combined)) +
     axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
     axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
     plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
+    legend.position = "bottom",  # Place the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
     axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
     panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
     panel.grid.minor = element_blank(),  # Remove minor grid lines
@@ -55,22 +62,28 @@ ggplot(data, aes(x = DATE, y = Combined)) +
 Millions of Domestic Currency, Not Seasonally Adjusted, Quarterly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/NGDPRNSAXDCINQ)
 
 ```{r, message=FALSE, echo=FALSE}
+# Read the data
 data <- read_csv("Data/India Data/NGDPRNSAXDCINQ.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
-data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
+data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = NGDPRNSAXDCINQ)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Create the plot with both 'NGDPRNSAXDCINQ' and 'SA' columns, adding a legend
+ggplot(data) +
+  geom_line(aes(x = DATE, y = NGDPRNSAXDCINQ, color = "Real GDP (Original)"), size = 1.2) +  # Original GDP line
+  geom_line(aes(x = DATE, y = NGDPRNSAXDCINQ_SA, color = "Real GDP (Seasonally Adjusted)"), size = 1.2, linetype = "solid") +  # Seasonally adjusted GDP line
   labs(
     title = "Real Gross Domestic Product (Millions Rupee)",
     x = "Date",  # Label for the x-axis
-    y = "Real GDP"  # Label for the y-axis
+    y = "Real GDP (Millions Rupee)",  # Label for the y-axis
+    color = "Series"  # Legend title
   ) +
   scale_x_date(
-    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "2 year"),  # Show labels every 2 years
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the legend
+    values = c("Real GDP (Original)" = "#1f77b4", "Real GDP (Seasonally Adjusted)" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(
@@ -79,7 +92,9 @@ ggplot(data, aes(x = DATE, y = NGDPRNSAXDCINQ)) +
     axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
     axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
     plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
+    legend.position = "bottom",  # Place the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
     axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
     panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
     panel.grid.minor = element_blank(),  # Remove minor grid lines

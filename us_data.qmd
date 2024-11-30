@@ -87,29 +87,33 @@ ggplot(data, aes(x = DATE, y = A191RL1Q225SBEA)) +
   )
 ```
 
-### Gross Domestic Product 
+### Gross Domestic Product
 
-Millions of Dollars, Not Seasonally Adjusted, Quarterly. \<br\>
-
-**Source:** [FRED](https://fred.stlouisfed.org/series/NA000334Q)
+Millions of Dollars, Not Seasonally Adjusted, Quarterly. <br> **Source:** [FRED](https://fred.stlouisfed.org/series/NA000334Q)
 
 ```{r, message=FALSE, echo=FALSE}
+# Read the data
 data <- read_csv("Data/FRED/NA000334Q.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
-data$DATE <- as.Date(data$DATE, format="%d/%m/%Y")
+data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(data, aes(x = DATE, y = NA000334Q)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Create the plot with both the original and seasonally adjusted series
+ggplot(data) +
+  geom_line(aes(x = DATE, y = NA000334Q, color = "Original GDP"), size = 1.2) +  # Original GDP line
+  geom_line(aes(x = DATE, y = NA000334Q_SA, color = "Seasonally Adjusted GDP"), size = 1.2, linetype = "solid") +  # Seasonally adjusted GDP line
   labs(
     title = "Gross Domestic Product (Millions of Dollars)",
     x = "Date",  # Label for the x-axis
-    y = "Real GDP"  # Label for the y-axis
+    y = "GDP (Millions of Dollars)",  # Label for the y-axis
+    color = "Series"  # Legend title
   ) +
   scale_x_date(
-    breaks = seq(min(data$DATE), max(data$DATE), by = "10 year"),  # Show labels every 6 months
+    breaks = seq(min(data$DATE), max(data$DATE), by = "10 year"),  # Show labels every 10 years
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the legend
+    values = c("Original GDP" = "#1f77b4", "Seasonally Adjusted GDP" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(
@@ -118,7 +122,9 @@ ggplot(data, aes(x = DATE, y = NA000334Q)) +
     axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
     axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
     plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
+    legend.position = "bottom",  # Place the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
     axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
     panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
     panel.grid.minor = element_blank(),  # Remove minor grid lines
@@ -165,7 +171,7 @@ ggplot(data, aes(x = DATE, y = FEDFUNDS)) +
 
 ### Industrial Production Index
 
-Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted, Monthly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO)
+Industrial Production: Total Index, Index 2017=100, Monthly, Seasonally Adjusted. <br> **Source:** [FRED](https://fred.stlouisfed.org/series/INDPRO)
 
 ```{r, message=FALSE, echo=FALSE}
 data <- read_csv("Data/FRED/INDPRO.csv")
@@ -200,32 +206,35 @@ ggplot(data, aes(x = DATE, y = INDPRO)) +
   )
 ```
 
-## Global Data 
+## Global Data
 
 ### Global Price Index of All Commodities
 
-Index 2016 = 100, Not Seasonally Adjusted, Quarterly. \<br\>
-
-**Source:** [FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXQ)
+Index 2016 = 100, Not Seasonally Adjusted, Quarterly. <br> **Source:** [FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXQ)
 
 ```{r, message=FALSE, echo=FALSE}
 # Read the data
 inflation_data <- read_csv("Data/FRED/PALLFNFINDEXQ.csv")
 
 # Convert observation_date to Date format (dd/mm/yyyy)
-inflation_data$DATE <- as.Date(inflation_data$DATE, format="%d/%m/%Y")
+inflation_data$DATE <- as.Date(inflation_data$DATE, format = "%d/%m/%Y")
 
-# Create the plot with aesthetic improvements
-ggplot(inflation_data, aes(x = DATE, y = PALLFNFINDEXQ)) +
-  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+# Create the plot with both the original and a new series (e.g., seasonally adjusted)
+ggplot(inflation_data) +
+  geom_line(aes(x = DATE, y = PALLFNFINDEXQ, color = "Original Price Index"), size = 1.2) +  # Original series
+  geom_line(aes(x = DATE, y = PALLFNFINDEXQ_SA, color = "Seasonally Adjusted Price Index"), size = 1.2, linetype = "solid") +  # Adjusted series
   labs(
-    title = "Global Price Index for all Commodities (2016 = 100)",
+    title = "Global Price Index for All Commodities (2016 = 100)",
     x = "Date",  # Label for the x-axis
-    y = "Price Index"  # Label for the y-axis
+    y = "Price Index",  # Label for the y-axis
+    color = "Series"  # Legend title
   ) +
   scale_x_date(
-    breaks = seq(min(inflation_data$DATE), max(inflation_data$DATE), by = "2 year"),  # Show labels every 6 months
+    breaks = seq(min(inflation_data$DATE), max(inflation_data$DATE), by = "2 year"),  # Show labels every 2 years
     labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the lines
+    values = c("Original Price Index" = "#1f77b4", "Seasonally Adjusted Price Index" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(
@@ -234,7 +243,9 @@ ggplot(inflation_data, aes(x = DATE, y = PALLFNFINDEXQ)) +
     axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
     axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
     plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
-    legend.position = "none",  # No legend as it's a single variable
+    legend.position = "bottom",  # Position the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
     axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
     panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
     panel.grid.minor = element_blank(),  # Remove minor grid lines
