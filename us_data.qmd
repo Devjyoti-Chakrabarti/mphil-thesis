@@ -210,7 +210,7 @@ ggplot(data, aes(x = DATE, y = INDPRO)) +
 
 ### Global Price Index of All Commodities
 
-Index 2016 = 100, Not Seasonally Adjusted, Quarterly. <br> **Source:** [FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXQ)
+Global Price Index for all Commodities, Index 2016 = 100, Not Seasonally Adjusted, Quarterly. <br> **Source:** [FRED](https://fred.stlouisfed.org/series/PALLFNFINDEXQ)
 
 ```{r, message=FALSE, echo=FALSE}
 # Read the data
