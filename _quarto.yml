@@ -8,6 +8,8 @@ website:
         href: us_data.qmd
       - text: "India Data"
         href: india_data.qmd
+      - text: "Results"
+        href: results.qmd
 
 format:
   html:

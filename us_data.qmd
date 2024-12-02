@@ -50,6 +50,49 @@ ggplot(inflation_data, aes(x = observation_date, y = CPIAUCSL)) +
   )
 ```
 
+\
+Growth Rate of CPI.
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Read the data
+inflation_data <- read_csv("Data/FRED/CPIAUCSL.csv")
+
+# Convert observation_date to Date format (dd/mm/yyyy)
+inflation_data$observation_date <- as.Date(inflation_data$observation_date, format="%d/%m/%Y")
+
+# Compute the natural log of CPI
+inflation_data$log_CPI <- log(inflation_data$CPIAUCSL)
+
+# Compute the first difference of the log-transformed CPI (log differences)
+inflation_data$log_diff_CPI <- c(NA, diff(inflation_data$log_CPI))
+
+# Create the plot with aesthetic improvements for log differences
+ggplot(inflation_data, aes(x = observation_date, y = log_diff_CPI)) +
+  geom_line(color = "#1f77b4", size = 1.2) +  # Change to a more appealing blue line
+  labs(
+    title = "Consumer Price Index (CPI) Growth Rate",
+    x = "Date",  # Label for the x-axis
+    y = "Log Difference of CPI"  # Label for the y-axis
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$observation_date), max(inflation_data$observation_date), by = "5 year"),  # Show labels every 10 years
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "none",  # No legend as it's a single variable
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
+```
+
 ### Real Gross Domestic Product
 
 Percent Change from Preceding Period, Seasonally Adjusted Annual Rate, Quarterly <br> **Source:** [FRED](https://fred.stlouisfed.org/series/A191RL1Q225SBEA)
@@ -114,6 +157,53 @@ ggplot(data) +
   ) +
   scale_color_manual(  # Custom colors for the legend
     values = c("Original GDP" = "#1f77b4", "Seasonally Adjusted GDP" = "#ff7f0e")
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "bottom",  # Place the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
+```
+
+Growth Rate of GDP (Seasonally Adjusted). \
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+
+# Read the data
+data <- read_csv("Data/FRED/NA000334Q.csv")
+
+# Convert observation_date to Date format (dd/mm/yyyy)
+data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
+
+# Calculate log differences for both original and seasonally adjusted GDP
+data$log_diff_GDP <- c(NA, diff(log(data$NA000334Q)))  # Log difference for the original GDP
+data$log_diff_SA_GDP <- c(NA, diff(log(data$NA000334Q_SA)))  # Log difference for the seasonally adjusted GDP
+
+# Create the plot with log differences for both the original and seasonally adjusted series
+ggplot(data) +
+  geom_line(aes(x = DATE, y = log_diff_SA_GDP, color = "Log Diff - Seasonally Adjusted GDP"), size = 1.2, linetype = "solid") +  # Log difference for seasonally adjusted GDP
+  labs(
+    title = "GDP Growth Rate (Seasonally Adjusted)",
+    x = "Date",  # Label for the x-axis
+    y = "Log Difference of GDP",  # Label for the y-axis
+    color = "Series"  # Legend title
+  ) +
+  scale_x_date(
+    breaks = seq(min(data$DATE), max(data$DATE), by = "5 year"),  # Show labels every 10 years
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the legend
+    values = c("Log Diff - Original GDP" = "#1f77b4", "Log Diff - Seasonally Adjusted GDP" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(
@@ -235,6 +325,55 @@ ggplot(inflation_data) +
   ) +
   scale_color_manual(  # Custom colors for the lines
     values = c("Original Price Index" = "#1f77b4", "Seasonally Adjusted Price Index" = "#ff7f0e")
+  ) +
+  theme_minimal() +  # Minimal theme for a clean look
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12, color = "black"),  # Rotate and style x-axis labels
+    axis.text.y = element_text(size = 12, color = "black"),  # Style y-axis labels
+    axis.title.x = element_text(size = 14, color = "black", face = "bold"),  # Bold x-axis title
+    axis.title.y = element_text(size = 14, color = "black", face = "bold"),  # Bold y-axis title
+    plot.title = element_text(size = 16, color = "black", face = "bold", hjust = 0.5),  # Bold and centered title
+    legend.position = "bottom",  # Position the legend at the bottom
+    legend.title = element_text(size = 12, face = "bold"),  # Style legend title
+    legend.text = element_text(size = 10),  # Style legend text
+    axis.line = element_line(color = "black", size = 0.5),  # Black axis lines
+    panel.grid.major = element_line(color = "grey90", size = 0.5),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    panel.background = element_rect(fill = "white", color = "white")  # White background
+  )
+```
+
+Growth Rate of Global Price Index (Seasonally Adjusted)
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+
+# Read the data
+inflation_data <- read_csv("Data/FRED/PALLFNFINDEXQ.csv")
+
+# Convert observation_date to Date format (dd/mm/yyyy)
+inflation_data$DATE <- as.Date(inflation_data$DATE, format = "%d/%m/%Y")
+
+# Compute the natural log of CPI
+inflation_data$log_CPI <- log(inflation_data$PALLFNFINDEXQ_SA)
+
+# Compute the first difference of the log-transformed CPI (log differences)
+inflation_data$log_diff_CPI <- c(NA, diff(inflation_data$log_CPI))
+
+# Create the plot with both the original and a new series (e.g., seasonally adjusted)
+ggplot(inflation_data) +
+  geom_line(aes(x = DATE, y = log_diff_CPI, color = "Log Diff-Seasonally Adjusted Price Index"), size = 1.2, linetype = "solid") +  # Adjusted series
+  labs(
+    title = "Global Price Index for All Commodities Growth Rate",
+    x = "Date",  # Label for the x-axis
+    y = "Log Differences",  # Label for the y-axis
+    color = "Series"  # Legend title
+  ) +
+  scale_x_date(
+    breaks = seq(min(inflation_data$DATE), max(inflation_data$DATE), by = "2 year"),  # Show labels every 2 years
+    labels = scales::date_format("%b %Y")  # Format labels as Month Year (e.g., Nov 2024)
+  ) +
+  scale_color_manual(  # Custom colors for the lines
+    values = c("Original Price Index" = "#1f77b4", "Log Diff-Seasonally Adjusted Price Index" = "#ff7f0e")
   ) +
   theme_minimal() +  # Minimal theme for a clean look
   theme(

@@ -1,4 +1,4 @@
-Year,Month,State,Group,Sub Group,Description,Rural,Urban,Combined,Status,DATE,CPI (SA)
+Year,Month,State,Group,Sub Group,Description,Rural,Urban,Combined,Status,DATE,CPI_SA
 2011,January,ALL India,,,General Index (All Groups),89.1,90,89.5,F,01/01/2011,90.18336895
 2011,February,ALL India,,,General Index (All Groups),87.9,89,88.4,F,01/02/2011,89.65281339
 2011,March,ALL India,,,General Index (All Groups),87.8,89.1,88.4,F,01/03/2011,89.89100783

@@ -1,0 +1,14 @@
+---
+title: Results
+author: Devjyoti Chakrabarti 
+---
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Read and print the SVAR summary from the file
+summary_content <- readLines("formatted_svar_summary.txt")
+cat(summary_content, sep="\n")
+```
+
+The 36 period IRFs following a shock to the Federal Funds Rate is shown below.
+
+![](images/clipboard-2637867791.png)

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Devjyoti Chakrabarti">
+
+<title>Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-274c3d255ff4b40ad85bc0e900837b3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./us_data.html"> 
+<span class="menu-text">US Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./india_data.html"> 
+<span class="menu-text">India Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./results.html" aria-current="page"> 
+<span class="menu-text">Results</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Results</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Devjyoti Chakrabarti </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Summary of Regression Results   
+==================================
+Model:                        SVAR
+Method:                        OLS
+Date:           Mon, 02, Dec, 2024
+Time:                     15:17:37
+--------------------------------------------------------------------
+No. of Equations:         7.00000    BIC:                   -39.5326
+Nobs:                     134.000    HQIC:                  -47.1711
+Log likelihood:           2774.83    FPE:                8.66855e-23
+AIC:                     -52.3999    Det(Omega_mle):     2.78337e-24
+--------------------------------------------------------------------
+Results for equation US_CPI
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                         -1.875312         0.614562           -3.051           0.002
+L1.US_CPI                      0.853362         0.151409            5.636           0.000
+L1.US_GDP                     -0.066571         0.112207           -0.593           0.553
+L1.Global_Price_Index          0.000210         0.000147            1.424           0.154
+L1.Fed_Funds_Rate              0.002688         0.003300            0.814           0.415
+L1.India_GDP                   0.034481         0.049183            0.701           0.483
+L1.India_CPI                  -0.061475         0.066893           -0.919           0.358
+L1.Repo_Rate                   0.000650         0.002505            0.259           0.795
+L2.US_CPI                     -0.523135         0.210040           -2.491           0.013
+L2.US_GDP                      0.140298         0.201023            0.698           0.485
+L2.Global_Price_Index          0.000092         0.000265            0.347           0.729
+L2.Fed_Funds_Rate             -0.007324         0.005044           -1.452           0.146
+L2.India_GDP                  -0.062632         0.090565           -0.692           0.489
+L2.India_CPI                   0.177051         0.096409            1.836           0.066
+L2.Repo_Rate                   0.003045         0.002859            1.065           0.287
+L3.US_CPI                      0.416211         0.236927            1.757           0.079
+L3.US_GDP                     -0.068107         0.141800           -0.480           0.631
+L3.Global_Price_Index          0.000049         0.000302            0.163           0.871
+L3.Fed_Funds_Rate              0.006114         0.005641            1.084           0.278
+L3.India_GDP                  -0.003404         0.071239           -0.048           0.962
+L3.India_CPI                  -0.236797         0.123709           -1.914           0.056
+L3.Repo_Rate                  -0.000239         0.003023           -0.079           0.937
+L4.US_CPI                     -0.026935         0.251258           -0.107           0.915
+L4.US_GDP                      0.064652         0.167740            0.385           0.700
+L4.Global_Price_Index         -0.000275         0.000351           -0.785           0.433
+L4.Fed_Funds_Rate             -0.006620         0.006562           -1.009           0.313
+L4.India_GDP                   0.020652         0.073138            0.282           0.778
+L4.India_CPI                   0.035795         0.130340            0.275           0.784
+L4.Repo_Rate                  -0.000881         0.002929           -0.301           0.764
+L5.US_CPI                      0.224242         0.247746            0.905           0.365
+L5.US_GDP                     -0.101196         0.236649           -0.428           0.669
+L5.Global_Price_Index         -0.000046         0.000377           -0.121           0.904
+L5.Fed_Funds_Rate              0.009039         0.005977            1.512           0.130
+L5.India_GDP                  -0.004978         0.104548           -0.048           0.962
+L5.India_CPI                  -0.097186         0.121096           -0.803           0.422
+L5.Repo_Rate                  -0.005230         0.002783           -1.879           0.060
+L6.US_CPI                     -0.279124         0.255401           -1.093           0.274
+L6.US_GDP                      0.165888         0.188931            0.878           0.380
+L6.Global_Price_Index          0.000094         0.000358            0.263           0.793
+L6.Fed_Funds_Rate             -0.002626         0.005743           -0.457           0.647
+L6.India_GDP                  -0.062659         0.081673           -0.767           0.443
+L6.India_CPI                   0.020278         0.117211            0.173           0.863
+L6.Repo_Rate                   0.002745         0.002927            0.938           0.348
+L7.US_CPI                      0.317677         0.265726            1.196           0.232
+L7.US_GDP                     -0.115731         0.211867           -0.546           0.585
+L7.Global_Price_Index          0.000078         0.000357            0.219           0.827
+L7.Fed_Funds_Rate              0.004512         0.005921            0.762           0.446
+L7.India_GDP                   0.029618         0.081728            0.362           0.717
+L7.India_CPI                   0.111724         0.110973            1.007           0.314
+L7.Repo_Rate                  -0.000760         0.003300           -0.230           0.818
+L8.US_CPI                     -0.317751         0.286642           -1.109           0.268
+L8.US_GDP                      0.192905         0.256448            0.752           0.452
+L8.Global_Price_Index         -0.000224         0.000336           -0.667           0.505
+L8.Fed_Funds_Rate              0.001924         0.006054            0.318           0.751
+L8.India_GDP                  -0.029465         0.100615           -0.293           0.770
+L8.India_CPI                  -0.051256         0.103225           -0.497           0.620
+L8.Repo_Rate                   0.000022         0.003048            0.007           0.994
+L9.US_CPI                      0.198374         0.303268            0.654           0.513
+L9.US_GDP                     -0.017027         0.170557           -0.100           0.920
+L9.Global_Price_Index          0.000378         0.000323            1.171           0.242
+L9.Fed_Funds_Rate             -0.005267         0.006080           -0.866           0.386
+L9.India_GDP                  -0.042582         0.072519           -0.587           0.557
+L9.India_CPI                  -0.018258         0.100846           -0.181           0.856
+L9.Repo_Rate                   0.000183         0.003257            0.056           0.955
+L10.US_CPI                    -0.039825         0.286582           -0.139           0.889
+L10.US_GDP                    -0.138311         0.162313           -0.852           0.394
+L10.Global_Price_Index        -0.000450         0.000327           -1.374           0.169
+L10.Fed_Funds_Rate             0.005539         0.006092            0.909           0.363
+L10.India_GDP                  0.063761         0.064541            0.988           0.323
+L10.India_CPI                  0.024830         0.098482            0.252           0.801
+L10.Repo_Rate                  0.001529         0.002976            0.514           0.607
+L11.US_CPI                    -0.035337         0.249112           -0.142           0.887
+L11.US_GDP                     0.252657         0.217018            1.164           0.244
+L11.Global_Price_Index         0.000230         0.000340            0.676           0.499
+L11.Fed_Funds_Rate            -0.005881         0.005812           -1.012           0.312
+L11.India_GDP                 -0.093241         0.086158           -1.082           0.279
+L11.India_CPI                  0.031215         0.095438            0.327           0.744
+L11.Repo_Rate                  0.001822         0.002788            0.654           0.513
+L12.US_CPI                     0.081021         0.165426            0.490           0.624
+L12.US_GDP                    -0.047813         0.118648           -0.403           0.687
+L12.Global_Price_Index        -0.000170         0.000221           -0.770           0.441
+L12.Fed_Funds_Rate            -0.000085         0.003881           -0.022           0.983
+L12.India_GDP                  0.019100         0.048137            0.397           0.692
+L12.India_CPI                  0.050029         0.067712            0.739           0.460
+L12.Repo_Rate                 -0.001897         0.002107           -0.900           0.368
+=========================================================================================
+
+Results for equation US_GDP
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                          1.320759         0.991293            1.332           0.183
+L1.US_CPI                     -0.308861         0.244223           -1.265           0.206
+L1.US_GDP                      1.552145         0.180991            8.576           0.000
+L1.Global_Price_Index          0.000356         0.000237            1.502           0.133
+L1.Fed_Funds_Rate              0.001479         0.005323            0.278           0.781
+L1.India_GDP                  -0.012590         0.079332           -0.159           0.874
+L1.India_CPI                   0.226228         0.107899            2.097           0.036
+L1.Repo_Rate                  -0.001960         0.004040           -0.485           0.628
+L2.US_CPI                      0.560753         0.338796            1.655           0.098
+L2.US_GDP                     -0.545339         0.324251           -1.682           0.093
+L2.Global_Price_Index         -0.000506         0.000427           -1.184           0.236
+L2.Fed_Funds_Rate             -0.018783         0.008136           -2.309           0.021
+L2.India_GDP                  -0.082132         0.146082           -0.562           0.574
+L2.India_CPI                  -0.514864         0.155508           -3.311           0.001
+L2.Repo_Rate                  -0.001365         0.004611           -0.296           0.767
+L3.US_CPI                     -0.631332         0.382165           -1.652           0.099
+L3.US_GDP                     -0.929147         0.228725           -4.062           0.000
+L3.Global_Price_Index          0.000791         0.000487            1.623           0.105
+L3.Fed_Funds_Rate              0.029053         0.009099            3.193           0.001
+L3.India_GDP                   0.232145         0.114910            2.020           0.043
+L3.India_CPI                   0.335781         0.199543            1.683           0.092
+L3.Repo_Rate                  -0.002023         0.004876           -0.415           0.678
+L4.US_CPI                      0.745668         0.405281            1.840           0.066
+L4.US_GDP                      1.326388         0.270566            4.902           0.000
+L4.Global_Price_Index         -0.000770         0.000566           -1.361           0.173
+L4.Fed_Funds_Rate             -0.002925         0.010585           -0.276           0.782
+L4.India_GDP                  -0.270688         0.117973           -2.294           0.022
+L4.India_CPI                  -0.366737         0.210240           -1.744           0.081
+L4.Repo_Rate                   0.002039         0.004725            0.432           0.666
+L5.US_CPI                     -0.872698         0.399617           -2.184           0.029
+L5.US_GDP                     -0.340466         0.381717           -0.892           0.372
+L5.Global_Price_Index          0.000202         0.000609            0.332           0.740
+L5.Fed_Funds_Rate              0.008557         0.009641            0.888           0.375
+L5.India_GDP                  -0.000288         0.168638           -0.002           0.999
+L5.India_CPI                   0.401678         0.195328            2.056           0.040
+L5.Repo_Rate                  -0.004642         0.004489           -1.034           0.301
+L6.US_CPI                      0.537763         0.411963            1.305           0.192
+L6.US_GDP                     -1.042683         0.304747           -3.421           0.001
+L6.Global_Price_Index          0.000650         0.000577            1.126           0.260
+L6.Fed_Funds_Rate             -0.005167         0.009263           -0.558           0.577
+L6.India_GDP                   0.253209         0.131739            1.922           0.055
+L6.India_CPI                  -0.345382         0.189062           -1.827           0.068
+L6.Repo_Rate                   0.002923         0.004722            0.619           0.536
+L7.US_CPI                     -0.437714         0.428618           -1.021           0.307
+L7.US_GDP                      1.448838         0.341743            4.240           0.000
+L7.Global_Price_Index         -0.000823         0.000576           -1.428           0.153
+L7.Fed_Funds_Rate             -0.007985         0.009551           -0.836           0.403
+L7.India_GDP                  -0.277206         0.131827           -2.103           0.035
+L7.India_CPI                   0.393701         0.179000            2.199           0.028
+L7.Repo_Rate                  -0.000339         0.005323           -0.064           0.949
+L8.US_CPI                      0.543368         0.462356            1.175           0.240
+L8.US_GDP                     -0.690908         0.413652           -1.670           0.095
+L8.Global_Price_Index          0.000515         0.000542            0.951           0.342
+L8.Fed_Funds_Rate              0.005524         0.009765            0.566           0.572
+L8.India_GDP                   0.151334         0.162293            0.932           0.351
+L8.India_CPI                  -0.150163         0.166502           -0.902           0.367
+L8.Repo_Rate                   0.007822         0.004917            1.591           0.112
+L9.US_CPI                     -0.274833         0.489174           -0.562           0.574
+L9.US_GDP                     -0.672293         0.275109           -2.444           0.015
+L9.Global_Price_Index          0.000133         0.000521            0.255           0.799
+L9.Fed_Funds_Rate             -0.017750         0.009806           -1.810           0.070
+L9.India_GDP                   0.052558         0.116974            0.449           0.653
+L9.India_CPI                  -0.040987         0.162665           -0.252           0.801
+L9.Repo_Rate                  -0.001609         0.005254           -0.306           0.759
+L10.US_CPI                    -0.120709         0.462258           -0.261           0.794
+L10.US_GDP                     1.373060         0.261812            5.244           0.000
+L10.Global_Price_Index        -0.000803         0.000528           -1.522           0.128
+L10.Fed_Funds_Rate             0.005824         0.009827            0.593           0.553
+L10.India_GDP                 -0.128170         0.104106           -1.231           0.218
+L10.India_CPI                  0.072629         0.158853            0.457           0.648
+L10.Repo_Rate                 -0.000757         0.004800           -0.158           0.875
+L11.US_CPI                     0.023118         0.401819            0.058           0.954
+L11.US_GDP                    -0.661360         0.350052           -1.889           0.059
+L11.Global_Price_Index         0.000230         0.000548            0.420           0.675
+L11.Fed_Funds_Rate            -0.014605         0.009375           -1.558           0.119
+L11.India_GDP                  0.096984         0.138973            0.698           0.485
+L11.India_CPI                 -0.078969         0.153943           -0.513           0.608
+L11.Repo_Rate                 -0.004828         0.004497           -1.074           0.283
+L12.US_CPI                     0.039202         0.266834            0.147           0.883
+L12.US_GDP                     0.143817         0.191380            0.751           0.452
+L12.Global_Price_Index         0.000263         0.000356            0.740           0.459
+L12.Fed_Funds_Rate             0.017027         0.006260            2.720           0.007
+L12.India_GDP                 -0.030903         0.077645           -0.398           0.691
+L12.India_CPI                  0.171304         0.109220            1.568           0.117
+L12.Repo_Rate                  0.001653         0.003398            0.486           0.627
+=========================================================================================
+
+Results for equation Global_Price_Index
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                       1381.762365       613.211277            2.253           0.024
+L1.US_CPI                    148.184569       151.075755            0.981           0.327
+L1.US_GDP                    -98.938027       111.960765           -0.884           0.377
+L1.Global_Price_Index          1.602942         0.146801           10.919           0.000
+L1.Fed_Funds_Rate             -3.787444         3.292774           -1.150           0.250
+L1.India_GDP                  49.417507        49.074433            1.007           0.314
+L1.India_CPI                  63.279215        66.746220            0.948           0.343
+L1.Repo_Rate                   0.559457         2.499173            0.224           0.823
+L2.US_CPI                   -151.276690       209.578028           -0.722           0.470
+L2.US_GDP                     56.834388       200.580912            0.283           0.777
+L2.Global_Price_Index         -0.650386         0.264099           -2.463           0.014
+L2.Fed_Funds_Rate             -2.741031         5.032684           -0.545           0.586
+L2.India_GDP                 -31.706397        90.365655           -0.351           0.726
+L2.India_CPI                -108.816722        96.196626           -1.131           0.258
+L2.Repo_Rate                  -5.373643         2.852446           -1.884           0.060
+L3.US_CPI                   -206.937463       236.406171           -0.875           0.381
+L3.US_GDP                     42.592742       141.488721            0.301           0.763
+L3.Global_Price_Index         -0.442736         0.301311           -1.469           0.142
+L3.Fed_Funds_Rate              6.615744         5.628818            1.175           0.240
+L3.India_GDP                  50.433342        71.082914            0.710           0.478
+L3.India_CPI                  66.283606       123.436949            0.537           0.591
+L3.Repo_Rate                   1.396898         3.016361            0.463           0.643
+L4.US_CPI                    449.532412       250.705869            1.793           0.073
+L4.US_GDP                   -163.540489       167.371593           -0.977           0.329
+L4.Global_Price_Index          0.552023         0.349929            1.578           0.115
+L4.Fed_Funds_Rate              1.654850         6.548005            0.253           0.800
+L4.India_GDP                 -15.936064        72.977627           -0.218           0.827
+L4.India_CPI                 -85.306470       130.053964           -0.656           0.512
+L4.Repo_Rate                  -1.383415         2.922920           -0.473           0.636
+L5.US_CPI                   -538.074523       247.201924           -2.177           0.030
+L5.US_GDP                    131.961072       236.129189            0.559           0.576
+L5.Global_Price_Index         -0.014059         0.376601           -0.037           0.970
+L5.Fed_Funds_Rate             -4.109285         5.963733           -0.689           0.491
+L5.India_GDP                 -17.544907       104.318697           -0.168           0.866
+L5.India_CPI                 181.338411       120.829511            1.501           0.133
+L5.Repo_Rate                  -1.190335         2.777095           -0.429           0.668
+L6.US_CPI                    140.216314       254.839302            0.550           0.582
+L6.US_GDP                    -81.670368       188.515610           -0.433           0.665
+L6.Global_Price_Index         -0.136951         0.357064           -0.384           0.701
+L6.Fed_Funds_Rate              2.152457         5.730257            0.376           0.707
+L6.India_GDP                  73.242012        81.493242            0.899           0.369
+L6.India_CPI                -129.000464       116.953152           -1.103           0.270
+L6.Repo_Rate                   4.046287         2.920913            1.385           0.166
+L7.US_CPI                    198.020541       265.141572            0.747           0.455
+L7.US_GDP                    -29.351208       211.401131           -0.139           0.890
+L7.Global_Price_Index          0.228986         0.356541            0.642           0.521
+L7.Fed_Funds_Rate             -0.479395         5.908398           -0.081           0.935
+L7.India_GDP                 -48.213230        81.548023           -0.591           0.554
+L7.India_CPI                 188.355537       110.729063            1.701           0.089
+L7.Repo_Rate                  -1.587532         3.293020           -0.482           0.630
+L8.US_CPI                    109.085238       286.012041            0.381           0.703
+L8.US_GDP                    -26.761348       255.884116           -0.105           0.917
+L8.Global_Price_Index         -0.161236         0.335164           -0.481           0.630
+L8.Fed_Funds_Rate              3.971316         6.040750            0.657           0.511
+L8.India_GDP                  11.440352       100.394284            0.114           0.909
+L8.India_CPI                -114.343709       102.997695           -1.110           0.267
+L8.Repo_Rate                  -1.521495         3.041474           -0.500           0.617
+L9.US_CPI                   -195.258320       302.601774           -0.645           0.519
+L9.US_GDP                     17.238532       170.181777            0.101           0.919
+L9.Global_Price_Index         -0.298131         0.322285           -0.925           0.355
+L9.Fed_Funds_Rate             -7.153102         6.066150           -1.179           0.238
+L9.India_GDP                  39.578515        72.359630            0.547           0.584
+L9.India_CPI                 -71.661759       100.624192           -0.712           0.476
+L9.Repo_Rate                  -1.084123         3.250192           -0.334           0.739
+L10.US_CPI                    99.872035       285.951751            0.349           0.727
+L10.US_GDP                   -66.438522       161.956109           -0.410           0.682
+L10.Global_Price_Index         0.457771         0.326633            1.401           0.161
+L10.Fed_Funds_Rate             0.212210         6.079024            0.035           0.972
+L10.India_GDP                 -1.440771        64.399645           -0.022           0.982
+L10.India_CPI                -17.988470        98.265843           -0.183           0.855
+L10.Repo_Rate                  2.144077         2.969331            0.722           0.470
+L11.US_CPI                  -174.837455       248.564020           -0.703           0.482
+L11.US_GDP                    37.894649       216.541344            0.175           0.861
+L11.Global_Price_Index        -0.131402         0.339241           -0.387           0.699
+L11.Fed_Funds_Rate             5.862535         5.799284            1.011           0.312
+L11.India_GDP                 -7.906442        85.968478           -0.092           0.927
+L11.India_CPI                104.163653        95.228733            1.094           0.274
+L11.Repo_Rate                 -1.979552         2.781759           -0.712           0.477
+L12.US_CPI                   161.874909       165.062617            0.981           0.327
+L12.US_GDP                     6.771253       118.387224            0.057           0.954
+L12.Global_Price_Index         0.108882         0.220050            0.495           0.621
+L12.Fed_Funds_Rate            -7.112924         3.872142           -1.837           0.066
+L12.India_GDP                 11.727782        48.031152            0.244           0.807
+L12.India_CPI                -91.038827        67.563079           -1.347           0.178
+L12.Repo_Rate                 -0.667436         2.101987           -0.318           0.751
+=========================================================================================
+
+Results for equation Fed_Funds_Rate
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                        -19.840423        25.677844           -0.773           0.440
+L1.US_CPI                     -9.794772         6.326204           -1.548           0.122
+L1.US_GDP                      7.047597         4.688288            1.503           0.133
+L1.Global_Price_Index         -0.002049         0.006147           -0.333           0.739
+L1.Fed_Funds_Rate              1.234135         0.137883            8.951           0.000
+L1.India_GDP                   4.112061         2.054962            2.001           0.045
+L1.India_CPI                   2.466965         2.794957            0.883           0.377
+L1.Repo_Rate                   0.175649         0.104651            1.678           0.093
+L2.US_CPI                     24.291374         8.775951            2.768           0.006
+L2.US_GDP                    -20.020667         8.399202           -2.384           0.017
+L2.Global_Price_Index          0.002556         0.011059            0.231           0.817
+L2.Fed_Funds_Rate             -0.481265         0.210741           -2.284           0.022
+L2.India_GDP                  -4.586981         3.784006           -1.212           0.225
+L2.India_CPI                  -1.511113         4.028174           -0.375           0.708
+L2.Repo_Rate                  -0.031565         0.119444           -0.264           0.792
+L3.US_CPI                    -27.638429         9.899363           -2.792           0.005
+L3.US_GDP                      9.025625         5.924753            1.523           0.128
+L3.Global_Price_Index         -0.004734         0.012617           -0.375           0.708
+L3.Fed_Funds_Rate              0.577871         0.235703            2.452           0.014
+L3.India_GDP                   0.725207         2.976553            0.244           0.808
+L3.India_CPI                   0.134095         5.168846            0.026           0.979
+L3.Repo_Rate                  -0.190392         0.126308           -1.507           0.132
+L4.US_CPI                      6.873351        10.498154            0.655           0.513
+L4.US_GDP                     19.302690         7.008582            2.754           0.006
+L4.Global_Price_Index          0.017837         0.014653            1.217           0.223
+L4.Fed_Funds_Rate             -0.640359         0.274194           -2.335           0.020
+L4.India_GDP                   0.535692         3.055893            0.175           0.861
+L4.India_CPI                  -4.507133         5.445930           -0.828           0.408
+L4.Repo_Rate                   0.132695         0.122395            1.084           0.278
+L5.US_CPI                      7.567410        10.351428            0.731           0.465
+L5.US_GDP                    -32.888503         9.887764           -3.326           0.001
+L5.Global_Price_Index         -0.014866         0.015770           -0.943           0.346
+L5.Fed_Funds_Rate              0.451946         0.249728            1.810           0.070
+L5.India_GDP                   2.004497         4.368281            0.459           0.646
+L5.India_CPI                   4.097115         5.059661            0.810           0.418
+L5.Repo_Rate                  -0.213143         0.116289           -1.833           0.067
+L6.US_CPI                     -9.240791        10.671239           -0.866           0.387
+L6.US_GDP                      7.748579         7.893975            0.982           0.326
+L6.Global_Price_Index          0.000630         0.014952            0.042           0.966
+L6.Fed_Funds_Rate              0.006879         0.239951            0.029           0.977
+L6.India_GDP                  -1.088517         3.412479           -0.319           0.750
+L6.India_CPI                  -5.561867         4.897341           -1.136           0.256
+L6.Repo_Rate                   0.145421         0.122311            1.189           0.234
+L7.US_CPI                      8.512052        11.102640            0.767           0.443
+L7.US_GDP                     24.777862         8.852292            2.799           0.005
+L7.Global_Price_Index          0.019843         0.014930            1.329           0.184
+L7.Fed_Funds_Rate             -0.108612         0.247411           -0.439           0.661
+L7.India_GDP                  -2.684345         3.414773           -0.786           0.432
+L7.India_CPI                   5.036691         4.636711            1.086           0.277
+L7.Repo_Rate                  -0.045620         0.137893           -0.331           0.741
+L8.US_CPI                     -5.672137        11.976578           -0.474           0.636
+L8.US_GDP                    -32.512280        10.714990           -3.034           0.002
+L8.Global_Price_Index         -0.016036         0.014035           -1.143           0.253
+L8.Fed_Funds_Rate             -0.337342         0.252953           -1.334           0.182
+L8.India_GDP                   5.194576         4.203949            1.236           0.217
+L8.India_CPI                  -1.313343         4.312965           -0.305           0.761
+L8.Repo_Rate                   0.005184         0.127360            0.041           0.968
+L9.US_CPI                     10.736929        12.671263            0.847           0.397
+L9.US_GDP                     12.134088         7.126257            1.703           0.089
+L9.Global_Price_Index         -0.004256         0.013495           -0.315           0.752
+L9.Fed_Funds_Rate              0.253172         0.254016            0.997           0.319
+L9.India_GDP                  -1.591027         3.030015           -0.525           0.600
+L9.India_CPI                  -3.031780         4.213576           -0.720           0.472
+L9.Repo_Rate                   0.169126         0.136100            1.243           0.214
+L10.US_CPI                     2.884290        11.974053            0.241           0.810
+L10.US_GDP                    15.514030         6.781812            2.288           0.022
+L10.Global_Price_Index        -0.000252         0.013678           -0.018           0.985
+L10.Fed_Funds_Rate            -0.183614         0.254555           -0.721           0.471
+L10.India_GDP                 -0.805806         2.696695           -0.299           0.765
+L10.India_CPI                  4.735633         4.114822            1.151           0.250
+L10.Repo_Rate                 -0.168433         0.124339           -1.355           0.176
+L11.US_CPI                   -14.266533        10.408465           -1.371           0.170
+L11.US_GDP                   -27.760170         9.067535           -3.061           0.002
+L11.Global_Price_Index         0.002684         0.014206            0.189           0.850
+L11.Fed_Funds_Rate             0.273993         0.242841            1.128           0.259
+L11.India_GDP                  1.632965         3.599877            0.454           0.650
+L11.India_CPI                 -6.350373         3.987645           -1.593           0.111
+L11.Repo_Rate                 -0.049306         0.116484           -0.423           0.672
+L12.US_CPI                     5.009569         6.911895            0.725           0.469
+L12.US_GDP                    18.398586         4.957392            3.711           0.000
+L12.Global_Price_Index         0.001731         0.009214            0.188           0.851
+L12.Fed_Funds_Rate            -0.195329         0.162144           -1.205           0.228
+L12.India_GDP                 -1.780147         2.011275           -0.885           0.376
+L12.India_CPI                  4.677169         2.829162            1.653           0.098
+L12.Repo_Rate                  0.104587         0.088019            1.188           0.235
+=========================================================================================
+
+Results for equation India_GDP
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                          1.588987         2.406498            0.660           0.509
+L1.US_CPI                     -0.442016         0.592885           -0.746           0.456
+L1.US_GDP                      0.145627         0.439381            0.331           0.740
+L1.Global_Price_Index          0.000365         0.000576            0.633           0.527
+L1.Fed_Funds_Rate              0.012673         0.012922            0.981           0.327
+L1.India_GDP                   1.628304         0.192589            8.455           0.000
+L1.India_CPI                   0.392758         0.261940            1.499           0.134
+L1.Repo_Rate                  -0.006300         0.009808           -0.642           0.521
+L2.US_CPI                      1.106190         0.822472            1.345           0.179
+L2.US_GDP                     -0.413399         0.787164           -0.525           0.599
+L2.Global_Price_Index         -0.000960         0.001036           -0.926           0.354
+L2.Fed_Funds_Rate             -0.054352         0.019750           -2.752           0.006
+L2.India_GDP                  -0.821033         0.354633           -2.315           0.021
+L2.India_CPI                  -1.288095         0.377516           -3.412           0.001
+L2.Repo_Rate                   0.000831         0.011194            0.074           0.941
+L3.US_CPI                     -1.446137         0.927757           -1.559           0.119
+L3.US_GDP                      0.310889         0.555261            0.560           0.576
+L3.Global_Price_Index          0.002868         0.001182            2.426           0.015
+L3.Fed_Funds_Rate              0.089299         0.022090            4.043           0.000
+L3.India_GDP                  -0.667514         0.278959           -2.393           0.017
+L3.India_CPI                   1.099007         0.484418            2.269           0.023
+L3.Repo_Rate                  -0.004275         0.011837           -0.361           0.718
+L4.US_CPI                      0.977028         0.983875            0.993           0.321
+L4.US_GDP                     -0.017128         0.656836           -0.026           0.979
+L4.Global_Price_Index         -0.003197         0.001373           -2.328           0.020
+L4.Fed_Funds_Rate             -0.040623         0.025697           -1.581           0.114
+L4.India_GDP                   1.213399         0.286395            4.237           0.000
+L4.India_CPI                  -0.774168         0.510386           -1.517           0.129
+L4.Repo_Rate                   0.006916         0.011471            0.603           0.547
+L5.US_CPI                     -1.441216         0.970124           -1.486           0.137
+L5.US_GDP                      0.081165         0.926670            0.088           0.930
+L5.Global_Price_Index          0.001113         0.001478            0.753           0.452
+L5.Fed_Funds_Rate              0.026744         0.023404            1.143           0.253
+L5.India_GDP                  -0.657641         0.409390           -1.606           0.108
+L5.India_CPI                   0.863201         0.474186            1.820           0.069
+L5.Repo_Rate                  -0.008306         0.010898           -0.762           0.446
+L6.US_CPI                      1.273351         1.000096            1.273           0.203
+L6.US_GDP                     -0.479074         0.739814           -0.648           0.517
+L6.Global_Price_Index          0.001200         0.001401            0.856           0.392
+L6.Fed_Funds_Rate              0.000262         0.022488            0.012           0.991
+L6.India_GDP                  -0.438401         0.319814           -1.371           0.170
+L6.India_CPI                  -0.793869         0.458973           -1.730           0.084
+L6.Repo_Rate                   0.000489         0.011463            0.043           0.966
+L7.US_CPI                     -1.401971         1.040527           -1.347           0.178
+L7.US_GDP                      0.581750         0.829627            0.701           0.483
+L7.Global_Price_Index         -0.001822         0.001399           -1.302           0.193
+L7.Fed_Funds_Rate             -0.030079         0.023187           -1.297           0.195
+L7.India_GDP                   0.919718         0.320029            2.874           0.004
+L7.India_CPI                   0.711337         0.434547            1.637           0.102
+L7.Repo_Rate                   0.001877         0.012923            0.145           0.885
+L8.US_CPI                      1.757207         1.122431            1.566           0.117
+L8.US_GDP                     -0.501159         1.004197           -0.499           0.618
+L8.Global_Price_Index          0.001803         0.001315            1.371           0.170
+L8.Fed_Funds_Rate              0.007577         0.023706            0.320           0.749
+L8.India_GDP                  -0.348556         0.393989           -0.885           0.376
+L8.India_CPI                   0.087813         0.404206            0.217           0.828
+L8.Repo_Rate                   0.022279         0.011936            1.867           0.062
+L9.US_CPI                     -0.107324         1.187536           -0.090           0.928
+L9.US_GDP                      0.208189         0.667865            0.312           0.755
+L9.Global_Price_Index         -0.001153         0.001265           -0.912           0.362
+L9.Fed_Funds_Rate             -0.023826         0.023806           -1.001           0.317
+L9.India_GDP                  -0.620854         0.283970           -2.186           0.029
+L9.India_CPI                  -0.164063         0.394892           -0.415           0.678
+L9.Repo_Rate                  -0.016293         0.012755           -1.277           0.201
+L10.US_CPI                    -0.869534         1.122195           -0.775           0.438
+L10.US_GDP                     0.388116         0.635584            0.611           0.541
+L10.Global_Price_Index        -0.001271         0.001282           -0.991           0.321
+L10.Fed_Funds_Rate             0.010410         0.023857            0.436           0.663
+L10.India_GDP                  1.039339         0.252731            4.112           0.000
+L10.India_CPI                 -0.113135         0.385636           -0.293           0.769
+L10.Repo_Rate                  0.002998         0.011653            0.257           0.797
+L11.US_CPI                     0.260518         0.975469            0.267           0.789
+L11.US_GDP                    -0.753013         0.849799           -0.886           0.376
+L11.Global_Price_Index         0.001312         0.001331            0.986           0.324
+L11.Fed_Funds_Rate             0.006127         0.022759            0.269           0.788
+L11.India_GDP                 -0.415121         0.337376           -1.230           0.219
+L11.India_CPI                 -0.025351         0.373717           -0.068           0.946
+L11.Repo_Rate                 -0.009903         0.010917           -0.907           0.364
+L12.US_CPI                    -0.412337         0.647775           -0.637           0.524
+L12.US_GDP                     0.660921         0.464601            1.423           0.155
+L12.Global_Price_Index         0.000071         0.000864            0.082           0.934
+L12.Fed_Funds_Rate             0.000767         0.015196            0.050           0.960
+L12.India_GDP                 -0.026210         0.188494           -0.139           0.889
+L12.India_CPI                  0.261053         0.265146            0.985           0.325
+L12.Repo_Rate                  0.005367         0.008249            0.651           0.515
+=========================================================================================
+
+Results for equation India_CPI
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                         -0.318466         1.235286           -0.258           0.797
+L1.US_CPI                     -0.395443         0.304335           -1.299           0.194
+L1.US_GDP                     -0.160462         0.225540           -0.711           0.477
+L1.Global_Price_Index         -0.000378         0.000296           -1.278           0.201
+L1.Fed_Funds_Rate             -0.010342         0.006633           -1.559           0.119
+L1.India_GDP                   0.011188         0.098858            0.113           0.910
+L1.India_CPI                   0.973206         0.134457            7.238           0.000
+L1.Repo_Rate                   0.000780         0.005034            0.155           0.877
+L2.US_CPI                      0.424388         0.422185            1.005           0.315
+L2.US_GDP                      0.162579         0.404061            0.402           0.687
+L2.Global_Price_Index          0.000755         0.000532            1.419           0.156
+L2.Fed_Funds_Rate              0.015156         0.010138            1.495           0.135
+L2.India_GDP                  -0.036418         0.182037           -0.200           0.841
+L2.India_CPI                  -0.216634         0.193784           -1.118           0.264
+L2.Repo_Rate                  -0.001087         0.005746           -0.189           0.850
+L3.US_CPI                     -0.213924         0.476229           -0.449           0.653
+L3.US_GDP                      0.275103         0.285023            0.965           0.334
+L3.Global_Price_Index          0.000028         0.000607            0.046           0.963
+L3.Fed_Funds_Rate             -0.016277         0.011339           -1.436           0.151
+L3.India_GDP                  -0.018782         0.143193           -0.131           0.896
+L3.India_CPI                   0.175399         0.248658            0.705           0.481
+L3.Repo_Rate                  -0.002373         0.006076           -0.391           0.696
+L4.US_CPI                      0.285346         0.505035            0.565           0.572
+L4.US_GDP                     -0.726320         0.337162           -2.154           0.031
+L4.Global_Price_Index         -0.000120         0.000705           -0.171           0.864
+L4.Fed_Funds_Rate              0.012998         0.013191            0.985           0.324
+L4.India_GDP                   0.180821         0.147010            1.230           0.219
+L4.India_CPI                  -0.320512         0.261988           -1.223           0.221
+L4.Repo_Rate                  -0.009178         0.005888           -1.559           0.119
+L5.US_CPI                     -0.323953         0.497977           -0.651           0.515
+L5.US_GDP                      0.638496         0.475671            1.342           0.179
+L5.Global_Price_Index         -0.001055         0.000759           -1.390           0.164
+L5.Fed_Funds_Rate              0.003116         0.012014            0.259           0.795
+L5.India_GDP                  -0.189087         0.210145           -0.900           0.368
+L5.India_CPI                   0.026736         0.243405            0.110           0.913
+L5.Repo_Rate                   0.006922         0.005594            1.237           0.216
+L6.US_CPI                      0.569018         0.513362            1.108           0.268
+L6.US_GDP                     -0.021857         0.379756           -0.058           0.954
+L6.Global_Price_Index          0.001440         0.000719            2.002           0.045
+L6.Fed_Funds_Rate              0.001754         0.011543            0.152           0.879
+L6.India_GDP                  -0.018787         0.164164           -0.114           0.909
+L6.India_CPI                   0.313158         0.235597            1.329           0.184
+L6.Repo_Rate                   0.003960         0.005884            0.673           0.501
+L7.US_CPI                     -0.801291         0.534116           -1.500           0.134
+L7.US_GDP                     -0.501051         0.425858           -1.177           0.239
+L7.Global_Price_Index         -0.000830         0.000718           -1.156           0.248
+L7.Fed_Funds_Rate              0.004697         0.011902            0.395           0.693
+L7.India_GDP                   0.069042         0.164275            0.420           0.674
+L7.India_CPI                  -0.262969         0.223059           -1.179           0.238
+L7.Repo_Rate                  -0.002751         0.006634           -0.415           0.678
+L8.US_CPI                      0.487201         0.576158            0.846           0.398
+L8.US_GDP                      0.583350         0.515467            1.132           0.258
+L8.Global_Price_Index          0.000022         0.000675            0.033           0.974
+L8.Fed_Funds_Rate             -0.004053         0.012169           -0.333           0.739
+L8.India_GDP                  -0.074852         0.202240           -0.370           0.711
+L8.India_CPI                   0.316369         0.207484            1.525           0.127
+L8.Repo_Rate                  -0.007486         0.006127           -1.222           0.222
+L9.US_CPI                      0.323377         0.609577            0.530           0.596
+L9.US_GDP                     -0.285320         0.342823           -0.832           0.405
+L9.Global_Price_Index          0.000354         0.000649            0.546           0.585
+L9.Fed_Funds_Rate              0.002795         0.012220            0.229           0.819
+L9.India_GDP                   0.087422         0.145765            0.600           0.549
+L9.India_CPI                  -0.053400         0.202703           -0.263           0.792
+L9.Repo_Rate                   0.004584         0.006547            0.700           0.484
+L10.US_CPI                    -0.002563         0.576037           -0.004           0.996
+L10.US_GDP                    -0.100537         0.326253           -0.308           0.758
+L10.Global_Price_Index         0.000050         0.000658            0.077           0.939
+L10.Fed_Funds_Rate            -0.014833         0.012246           -1.211           0.226
+L10.India_GDP                 -0.074057         0.129730           -0.571           0.568
+L10.India_CPI                  0.055697         0.197952            0.281           0.778
+L10.Repo_Rate                 -0.001601         0.005982           -0.268           0.789
+L11.US_CPI                    -0.339736         0.500721           -0.678           0.497
+L11.US_GDP                     0.306612         0.436213            0.703           0.482
+L11.Global_Price_Index        -0.000896         0.000683           -1.312           0.190
+L11.Fed_Funds_Rate            -0.003046         0.011682           -0.261           0.794
+L11.India_GDP                  0.097276         0.173180            0.562           0.574
+L11.India_CPI                 -0.275979         0.191834           -1.439           0.150
+L11.Repo_Rate                  0.012222         0.005604            2.181           0.029
+L12.US_CPI                    -0.041010         0.332511           -0.123           0.902
+L12.US_GDP                    -0.092789         0.238486           -0.389           0.697
+L12.Global_Price_Index         0.000706         0.000443            1.593           0.111
+L12.Fed_Funds_Rate             0.008724         0.007800            1.118           0.263
+L12.India_GDP                 -0.080635         0.096757           -0.833           0.405
+L12.India_CPI                  0.226489         0.136103            1.664           0.096
+L12.Repo_Rate                 -0.008786         0.004234           -2.075           0.038
+=========================================================================================
+
+Results for equation Repo_Rate
+=========================================================================================
+                            coefficient       std. error           t-stat            prob
+-----------------------------------------------------------------------------------------
+const                        -61.985819        38.876005           -1.594           0.111
+L1.US_CPI                    -23.625225         9.577811           -2.467           0.014
+L1.US_GDP                     12.755816         7.098022            1.797           0.072
+L1.Global_Price_Index         -0.015032         0.009307           -1.615           0.106
+L1.Fed_Funds_Rate              0.196035         0.208753            0.939           0.348
+L1.India_GDP                   3.782563         3.111192            1.216           0.224
+L1.India_CPI                  -0.891338         4.231537           -0.211           0.833
+L1.Repo_Rate                   0.612163         0.158441            3.864           0.000
+L2.US_CPI                     19.069745        13.286703            1.435           0.151
+L2.US_GDP                    -34.916679        12.716310           -2.746           0.006
+L2.Global_Price_Index          0.056635         0.016743            3.383           0.001
+L2.Fed_Funds_Rate              0.008803         0.319059            0.028           0.978
+L2.India_GDP                  -1.541636         5.728948           -0.269           0.788
+L2.India_CPI                   7.133780         6.098617            1.170           0.242
+L2.Repo_Rate                   0.416079         0.180838            2.301           0.021
+L3.US_CPI                    -13.922407        14.987538           -0.929           0.353
+L3.US_GDP                     23.222836         8.970018            2.589           0.010
+L3.Global_Price_Index         -0.030916         0.019102           -1.618           0.106
+L3.Fed_Funds_Rate             -0.129158         0.356852           -0.362           0.717
+L3.India_GDP                  -4.109814         4.506472           -0.912           0.362
+L3.India_CPI                   4.989333         7.825582            0.638           0.524
+L3.Repo_Rate                   0.159848         0.191229            0.836           0.403
+L4.US_CPI                      2.224354        15.894102            0.140           0.889
+L4.US_GDP                     24.120399        10.610925            2.273           0.023
+L4.Global_Price_Index         -0.025779         0.022185           -1.162           0.245
+L4.Fed_Funds_Rate             -0.277169         0.415127           -0.668           0.504
+L4.India_GDP                   2.526525         4.626592            0.546           0.585
+L4.India_CPI                  -3.965752         8.245084           -0.481           0.631
+L4.Repo_Rate                   0.230350         0.185306            1.243           0.214
+L5.US_CPI                     14.658708        15.671961            0.935           0.350
+L5.US_GDP                    -53.110364        14.969978           -3.548           0.000
+L5.Global_Price_Index          0.039452         0.023876            1.652           0.098
+L5.Fed_Funds_Rate              0.143293         0.378085            0.379           0.705
+L5.India_GDP                   5.274295         6.613535            0.798           0.425
+L5.India_CPI                   0.468100         7.660278            0.061           0.951
+L5.Repo_Rate                  -0.366686         0.176061           -2.083           0.037
+L6.US_CPI                    -10.972506        16.156151           -0.679           0.497
+L6.US_GDP                     24.499128        11.951401            2.050           0.040
+L6.Global_Price_Index         -0.029774         0.022637           -1.315           0.188
+L6.Fed_Funds_Rate              0.090076         0.363283            0.248           0.804
+L6.India_GDP                  -8.054355         5.166460           -1.559           0.119
+L6.India_CPI                  -8.710769         7.414527           -1.175           0.240
+L6.Repo_Rate                  -0.178566         0.185178           -0.964           0.335
+L7.US_CPI                     -6.035251        16.809288           -0.359           0.720
+L7.US_GDP                     33.949913        13.402283            2.533           0.011
+L7.Global_Price_Index          0.003050         0.022604            0.135           0.893
+L7.Fed_Funds_Rate              0.406508         0.374577            1.085           0.278
+L7.India_GDP                   0.618811         5.169933            0.120           0.905
+L7.India_CPI                   3.798816         7.019935            0.541           0.588
+L7.Repo_Rate                   0.092512         0.208769            0.443           0.658
+L8.US_CPI                     28.629451        18.132422            1.579           0.114
+L8.US_GDP                    -57.983759        16.222389           -3.574           0.000
+L8.Global_Price_Index          0.025788         0.021249            1.214           0.225
+L8.Fed_Funds_Rate             -0.663831         0.382968           -1.733           0.083
+L8.India_GDP                   5.249086         6.364737            0.825           0.410
+L8.India_CPI                  -3.672856         6.529787           -0.562           0.574
+L8.Repo_Rate                   0.036686         0.192822            0.190           0.849
+L9.US_CPI                    -20.271282        19.184168           -1.057           0.291
+L9.US_GDP                     33.033347        10.789083            3.062           0.002
+L9.Global_Price_Index         -0.019756         0.020432           -0.967           0.334
+L9.Fed_Funds_Rate              0.557299         0.384578            1.449           0.147
+L9.India_GDP                  -6.430905         4.587413           -1.402           0.161
+L9.India_CPI                   3.697414         6.379313            0.580           0.562
+L9.Repo_Rate                   0.090189         0.206054            0.438           0.662
+L10.US_CPI                     1.489304        18.128599            0.082           0.935
+L10.US_GDP                    20.000435        10.267597            1.948           0.051
+L10.Global_Price_Index         0.011833         0.020708            0.571           0.568
+L10.Fed_Funds_Rate            -0.581482         0.385394           -1.509           0.131
+L10.India_GDP                  0.850061         4.082770            0.208           0.835
+L10.India_CPI                 -0.112514         6.229800           -0.018           0.986
+L10.Repo_Rate                  0.087540         0.188248            0.465           0.642
+L11.US_CPI                     9.347306        15.758314            0.593           0.553
+L11.US_GDP                   -46.504559        13.728160           -3.388           0.001
+L11.Global_Price_Index        -0.003845         0.021507           -0.179           0.858
+L11.Fed_Funds_Rate             0.485138         0.367660            1.320           0.187
+L11.India_GDP                  5.431541         5.450179            0.997           0.319
+L11.India_CPI                 -4.798084         6.037255           -0.795           0.427
+L11.Repo_Rate                 -0.126198         0.176356           -0.716           0.474
+L12.US_CPI                   -10.949827        10.464542           -1.046           0.295
+L12.US_GDP                    30.715086         7.505443            4.092           0.000
+L12.Global_Price_Index        -0.010252         0.013951           -0.735           0.462
+L12.Fed_Funds_Rate            -0.138593         0.245484           -0.565           0.572
+L12.India_GDP                 -7.393591         3.045050           -2.428           0.015
+L12.India_CPI                  3.380302         4.283324            0.789           0.430
+L12.Repo_Rate                  0.086039         0.133261            0.646           0.519
+=========================================================================================
+
+Correlation matrix of residuals
+                        US_CPI    US_GDP  Global_Price_Index  Fed_Funds_Rate  India_GDP  India_CPI  Repo_Rate
+US_CPI                1.000000  0.154489            0.130243        0.253070   0.149194   0.170075   0.245766
+US_GDP                0.154489  1.000000            0.382351       -0.156191   0.683609   0.064737   0.076319
+Global_Price_Index    0.130243  0.382351            1.000000       -0.189076   0.132608  -0.153750  -0.216351
+Fed_Funds_Rate        0.253070 -0.156191           -0.189076        1.000000   0.007848  -0.003258   0.453896
+India_GDP             0.149194  0.683609            0.132608        0.007848   1.000000   0.056032   0.254289
+India_CPI             0.170075  0.064737           -0.153750       -0.003258   0.056032   1.000000   0.112526
+Repo_Rate             0.245766  0.076319           -0.216351        0.453896   0.254289   0.112526   1.000000</code></pre>
+</div>
+</div>
+<p>The 36 period IRFs following a shock to the Federal Funds Rate is shown below.</p>
+<p><img src="images/clipboard-2637867791.png" class="img-fluid"></p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
