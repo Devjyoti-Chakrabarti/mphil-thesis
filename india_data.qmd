@@ -26,7 +26,7 @@ data$DATE <- as.Date(data$DATE, format = "%d/%m/%Y")
 # Create the plot with both 'Combined' and 'CPI (SA)' columns, adding a legend
 ggplot(data) +
   geom_line(aes(x = DATE, y = Combined, color = "CPI (Original)"), size = 1.2) +  # Original CPI line
-  geom_line(aes(x = DATE, y = `CPI (SA)`, color = "CPI (Seasonally Adjusted)"), size = 1.2, linetype = "solid") +  # Seasonally adjusted CPI line
+  geom_line(aes(x = DATE, y = CPI_SA, color = "CPI (Seasonally Adjusted)"), size = 1.2, linetype = "solid") +  # Seasonally adjusted CPI line
   labs(
     title = "CPI Index",
     x = "Date",  # Label for the x-axis
